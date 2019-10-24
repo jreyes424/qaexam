@@ -1,0 +1,34 @@
+*** Settings ***
+Suite Setup       Open MarketPlace Website And Navigate To Register Page ${NewIPAddress}
+Suite Teardown    Close All Browsers
+Resource          RegisterKeywords.tsv
+
+*** Test Cases ***
+User Should Be Able To Sign Up New Account
+    Create Random Valid Email And Enter In Email${NewEmail}  Field
+    Input Text ${RegisterPage_PasswordField}    ${ValidPassword}
+    Click   ${RegisterPage_TermsCheckBox}
+    Click   ${RegisterPage_RegisterAccountButton}
+    Verify Page Contains Text   ${VerifyMessage}
+ 
+
+User Should Be Able To Confirm Verification Email Sent
+    Sign Up New User
+    Select Window   ${Window2Title}
+    Click   ${EmailGenerator_CheckMail}
+    Verify Page Contains Text   ${VerificationMesage}
+    Click   ${EmailGenerator_ConfirmButton}
+    Select Window   ${Window1Title}
+    Location Should Be ${MarketPlaceWebsite}
+
+
+User Should Be Able To Login Upon Email Verification
+    Sign Up New User
+    Select Window   ${Window2Title}
+    Click   ${EmailGenerator_CheckMail}
+    Verify Page Contains Text   ${VerificationMesage}
+    Click   ${EmailGenerator_ConfirmButton}
+    Select Window   ${Window1Title}
+    Login User In The Application   ${NewEmail} ${ValidPassword}
+    Location Should Be ${MarketPlaceHomeURL}
+

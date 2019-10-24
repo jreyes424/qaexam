@@ -1,0 +1,35 @@
+*Settings*							
+Resource	GlobalKeywords.tsv						
+Resource	WebLocators.tsv						
+Resource	Variables.tsv						
+Resource	DataSetupKeywords.tsv						
+							
+*Keywords*							
+Open Market Place Web Application	[Arguments]	${IPAddress}					
+	Open Chrome Browser With Disabled Security Options	${MarketPlaceWebsite}	${IPAddress}
+	${Window1Title}=    Get Title
+	Location Should Be ${MarketPlaceWebsite}					
+							
+Create Random Email
+	Open Chrome Browser With Disabled Security Options	${EmailGeneratorWebsite}	${IPAddress}
+	${Window2Title}=    Get Title
+	${NewEmail}=	Get Element Attribute	${EmailGenarator_NewEmail}	value
+	Set Global Variable	${NewEmail}
+
+Login User In The Application [Arguments] ${Email} ${Password}
+	Input Text	${Application_EmailField}	${Email}
+	Input Text	${Application_PasswordField} ${Password}
+	Log To Console	${Email} Successfully Logged In
+
+Logout from Market Place Web Application
+	Click	${HomePage_EmailHeader}
+	Click	${AccountHomePage_Logout}
+	Log To Console	User Successfully Logout
+
+Verify Dropdown Options Are Correct
+	[Arguments]	${DropdownOptionsLocator}	@{ExpectedDropdownOptions}
+	${NumberOfDropdownOptions}=	Get Matching XPath Count	${DropdownOptionsLocator}
+	:FOR	${ctr}	IN RANGE	1	${NumberOfDropdownOptions}+1	
+	\	${ActualDropdownOption}=	Get Text	${DropdownOptionsLocator}[${ctr}]
+	\	Should Be Equal	${ActualDropdownOption}	${ExpectedDropdownOptions[${ctr}-1]}
+

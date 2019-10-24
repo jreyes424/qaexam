@@ -1,0 +1,23 @@
+*** Settings ***
+Suite Setup      Open Market Place Web Application ${NewIPAddress}
+Suite Teardown    Close All Browsers
+Resource          HomePageKeywords.tsv
+
+*** Test Cases *** 
+Error Message Should Be Displayed With Incorrect Email
+    Login User In The Application ${InvalidEmail} ${ValidPassword}
+    Alert Should Be Present ${UnregisterEmailMessage}
+
+Error Message Should Be Displayed With Incorrect Password
+    Login User In The Application ${NewEmail} ${InvalidPassword}
+    Alert Should Be Present    ${LoginFailedMessage}
+
+User Should Be Logged In With Valid Credentials 
+    Login User In The Application ${NewEmail} ${ValidPassword}
+    Location Should Be ${MarketPlaceHomeURL}
+    [Teardown]    Logout User and Navigate To Home Page
+
+User Should Be Directed As Guest View Upon Logout
+    Login To SIM Web Application    ${SIM2Username}    ${SIM2Password}
+    Logout from SIM Web Application
+    Verify Elements Is Visible  ${HomePage_SignUpTab}

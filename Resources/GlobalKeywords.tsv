@@ -1,0 +1,78 @@
+*Settings*
+Resource	GlobalVariables.tsv
+Resource	Variables.tsv
+Library	${Library}
+Library	String
+
+*Keywords*
+Open Chrome Browser With Disabled Security Options	[Arguments]	${URL}	${IPAddress}
+	${ChromeOptions}=	Evaluate	sys.modules['selenium.webdriver'].ChromeOptions()	sys
+	Call Method	${ChromeOptions}	add_argument	--user-data-dir\=${IPAddress}
+	Call Method	${ChromeOptions}	add_argument	--disable-web-security
+	Create Webdriver	Chrome	chrome_options=${ChromeOptions}
+	Maximize Browser Window
+	Go to	${URL}
+
+Close Application	Comment	Keyword for Selenium2Library
+	: FOR	${test}	IN	${Library}
+		Run Keyword If	'${Library}'=='Selenium2Library'	No Operation
+		...	ELSE	Exit For Loop
+		Wait Until Keyword Succeeds	${WaitUntilKeywordSucceedsRetry}	${WaitUntilKeywordSucceedsRetryInterval}	Selenium2Library.Close Browser
+	Log To Console	Browser/Application is closed.
+
+Click	[Arguments]	${LOCATOR}
+	[Documentation]	This keyword will try to click element identified by locator and retries if it fails. The retry & retry_interval are controlled by global variables. This keyword will fail the TC after a number of unsuccessful retries.
+	Comment	Keyword for Selenium2Library
+	: FOR	${test}	IN	${Library}
+		Run Keyword If	'${Library}'=='Selenium2Library'	No Operation
+		...	ELSE	Exit For Loop
+		Wait Until Keyword Succeeds	${WaitUntilKeywordSucceedsRetry}	${WaitUntilKeywordSucceedsRetryInterval}	Selenium2Library.Click Element	${LOCATOR}
+		Log To Console	Clicked On: ${LOCATOR}
+
+Input Text	[Arguments]	${Locator}	${Value}	${shouldClear}=${False}
+	Comment	Keyword for Selenium2Library
+	: FOR	${test}	IN	${Library}
+		Run Keyword If	'${Library}'=='Selenium2Library'	No Operation
+		...	ELSE	Exit For Loop
+		Wait Until Keyword Succeeds	${WaitUntilKeywordSucceedsRetry}	${WaitUntilKeywordSucceedsRetryInterval}	Selenium2Library.Input Text	${Locator}	${Value}
+		Log To Console	Inputted ${Value} into element with locator ${Locator}
+
+Get Element Attribute	[Arguments]	${LOCATOR}	${ATTRIBUTE}
+	[Documentation]	This keyword will try to get that element attribute by specifing the locator and attribute separately. The retry & retry_interval are controlled by global variables. This keyword will fail the TC after a number of unsuccessful retries.
+	Comment	Keyword for Selenium2Library
+	: FOR	${test}	IN	${Library}
+		Run Keyword If	'${Library}'=='Selenium2Library'	No Operation
+		...	ELSE	Exit For Loop
+		${ElementAttribute}=	Wait Until Keyword Succeeds	${WaitUntilKeywordSucceedsRetry}	${WaitUntilKeywordSucceedsRetryInterval}	Selenium2Library.Get Element Attribute	${LOCATOR}	${ATTRIBUTE}
+	[Return]	${ElementAttribute}
+
+Verify Page Contains Text	[Arguments]	${TEXT}
+	[Documentation]	This keyword will try to verify that current page contains text and retries if it fails. The retry & retry_interval are controlled by global variables. This keyword will fail the TC after a number of unsuccessful retries.
+	: FOR	${test}	IN	${Library}
+		Run Keyword If	'${Library}'=='Selenium2Library'	No Operation
+		...	ELSE	Exit For Loop
+		Wait Until Keyword Succeeds	${WaitUntilKeywordSucceedsRetry}	${WaitUntilKeywordSucceedsRetryInterval}	Selenium2Library.Page Should Contain	${TEXT}
+		Log To Console	Verified Page Contain: ${TEXT}
+
+Alert Should Be Displayed	[Arguments]	${Message}=${None}	${AlertHeader}=${None}	${KeyPrompt}=${None}
+	Comment	Keyword for Selenium2Library
+	: FOR	${test}	IN	${Library}
+		Run Keyword If	'${Library}'=='Selenium2Library'	No Operation
+		...	ELSE	Exit For Loop
+		Wait Until Keyword Succeeds	${WaitUntilKeywordSucceedsRetry}	${WaitUntilKeywordSucceedsRetryInterval}	Selenium2Library.Alert Should Be Present	${Message}
+
+Verify Element Is Visible	[Arguments]	${Locator}
+	Comment	Keyword for Selenium2Library
+	: FOR	${test}	IN	${Library}
+		Run Keyword If	'${Library}'=='Selenium2Library'	No Operation
+		...	ELSE	Exit For Loop
+		Wait Until Keyword Succeeds	${WaitUntilKeywordSucceedsRetry}	${WaitUntilKeywordSucceedsRetryInterval}	Selenium2Library.Element Should Be Visible	${Locator}
+		Log To Console	Verified Page Contain: ${Locator}
+
+Select From Dropdown	[Arguments]	${DropdownLocator}	${Value}	${From}=Value
+	Comment	Keyword for Selenium2Library
+	: FOR	${test}	IN	${Library}
+		Run Keyword If	'${Library}'=='Selenium2Library'	No Operation
+		...	ELSE	Exit For Loop
+		Run Keyword If	'${From}'=='Value'	Wait Until Keyword Succeeds	${WaitUntilKeywordSucceedsRetry}	${WaitUntilKeywordSucceedsRetryInterval}	Selenium2Library.Select From List By Value	${DropdownLocator}	${Value}
+		Run Keyword If	'${From}'=='Label'	Wait Until Keyword Succeeds	${WaitUntilKeywordSucceedsRetry}	${WaitUntilKeywordSucceedsRetryInterval}	Selenium2Library.Select From List By Label	${DropdownLocator}	${Value}

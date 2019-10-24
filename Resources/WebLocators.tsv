@@ -1,0 +1,23 @@
+*Variables*
+${HomePage_SignUpTab}	//a[contains(@class,'item') and @href="#/marketplace/register"]
+${HomePage_MarketPlaceHeader}	//a[@class="header item" and .="Marketplace"]
+${AccountHomePage_EmailHeader}	//div[2][@role="listbox"]/span/i
+${AccountHomePage_AccountOption}	//div[@role="option"]/span[@class="text" and .="Account"]
+${AccountHomePage_Logout}	//div[@role="option"]/span[@class="text" and .="Log Out"]
+${EmailGenerator_NewEmail}	//div[@class="as_middle"]/input
+${Application_EmailField}	//input[@name="email"]
+${Application_PasswordField}	//input[@name="password"]
+${RegisterPage_TermsCheckBox}	//input[@type="checkbox"]
+${RegisterPage_RegisterAccountButton}	//button[@type="submit"]
+${EmailGenerator_CheckMail}	 //input[@value="Check mails"]
+${EmailGenerator_ConfirmButton} //a[@class="button-a"]/span
+${HowToGetStarted_KYCSubmitButton} //a[@role="button" and .="Submit KYC Information"]
+${HowToGetStarted_FirstNameField} //input[@name="first_name"]
+${HowToGetStarted_LastNameField} //input[@name="last_name"]
+${HowToGetStarted_DateOfBirthField}	//input[@name="birthday"]
+${HowToGetStarted_GenderField}	//div[@name="sex"]
+${HowToGetStarted_ContactField}	//input[@name="phone_number"]
+${HowToGetStarted_NationalityField}	//div[@name="nationality"]
+${HowToGetStarted_EthereumAddressField}	//input[@name="address"]
+${HowToGetStarted_NextStepButton} //a[@role="button" and .="Next Step"]
+${Residence_CountryDropdown}	//div[@class="ui search selection dropdown" and @name="country"]

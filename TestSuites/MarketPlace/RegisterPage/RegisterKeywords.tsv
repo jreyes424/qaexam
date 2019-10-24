@@ -1,0 +1,22 @@
+*Settings*							
+Resource	../../../Resources/WebKeywords.tsv						
+							
+*Keywords*							
+Open MarketPlace Website And Navigate To Register Page [Arguments]	${IPAddress}
+	Open MarketPlace Website Application	${IPAddress}
+	Click	${HomePage_SignUpTab}
+	Log To Console	Successfully Navigated To Register Page
+
+Create Random Valid Email And Enter In Email Field
+	Create Random Email
+	Select Window    Title=${Window1Title}
+	Input Text	${Register_EmailField}	${NewEmail}
+	Log To Console	Created ${NewEmail} and Entered into the Field ${Register_EmailField}
+
+Sign Up New User
+	Create Random Valid Email And Enter In Email Field
+    Input Text ${RegisterPage_PasswordField}    ${ValidPassword}
+    Click   ${RegisterPage_TermsCheckBox}
+    Click   ${RegisterPage_RegisterAccountButton}
+    Log To Console	New User With ${NewEmail} as an Email is Created
+

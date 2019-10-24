@@ -1,0 +1,1 @@
+15 10-18 * * 1-5 python -m robot.run C:\Users\jreyes\Desktop\Automation\qaexam\TestSuites\MarketPlace\Register\LoginPageLogin.py

@@ -1,0 +1,20 @@
+*** Settings ***
+Suite Setup       Open Market Place Web Application ${NewIPAddress}
+Suite Teardown    Close All Browsers
+Resource          HomePageKeywords.tsv
+
+*** Test Cases *** 
+User Should Be To Assert Country Of Residence Dropdown
+    Login User In The Application ${ValidEmail} ${ValidPassword}
+    Navigate To How To Get Started
+    Click   ${HowToGetStarted_KYCSubmitButton}
+    Input Text  ${HowToGetStarted_FirstNameField}   ${FirstName}
+    Input Text  ${HowToGetStarted_LastNameField}    ${LastName}
+    Input Text  $${HowToGetStarted_DateOfBirthField}  ${DateOfBirth}
+    Select From Dropdown  ${HowToGetStarted_GenderField}   ${Gender1}
+    Input Text  ${HowToGetStarted_ContactField}   ${Contact}
+    Select From Dropdown  ${HowToGetStarted_NationalityField}   ${Nationality}
+    Input Text  ${HowToGetStarted_EthereumAddressField}    ${EthereumAddress}
+    Click   {HowToGetStarted_NextStepButton}
+    Verify Dropdown Options Are Correct ${Residence_CountryDropdown} @{CountryDropdown}
+

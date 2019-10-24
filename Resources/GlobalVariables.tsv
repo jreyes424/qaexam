@@ -1,0 +1,11 @@
+*Variables*
+${GlobalTimeout}	100 sec
+${InvalidPassword}	InvalidPassword
+${InvalidEmail}	ILoveYou3000@gmail.com
+${Library}	Selenium2Library
+${RemoteURL}	http://localhost:4723/wd/hub
+${WaitUntilKeywordSucceedsRetry}	1 min
+${WaitUntilKeywordSucceedsRetryInterval}	20 sec
+${WaitUntilKeywordSucceedsLongerTimeout}	2 mins
+${SleepTimeout}	2s
+${IPAddress}	10.88.36.100	# Change this value based on your terminal's IP Address

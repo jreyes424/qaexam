@@ -1,0 +1,14 @@
+*Settings*							
+Resource	../../../../Resources/WebKeywords.tsv						
+							
+*Keywords*							
+Logout User and Navigate To Home Page
+	Logout from Market Place Web Application
+	Click	${HomePage_MarketPlaceHeader}
+	Log To Console	Successfully Navigated To Home Page
+
+Navigate To How To Get Started
+	Click   ${HomePage_EmailHeader}
+    Click   ${AccountHomePage_AccountOption}
+    Verify Element Is Visible	${HowToGetStarted_KYCSubmitButton}
+    

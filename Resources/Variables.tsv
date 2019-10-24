@@ -1,0 +1,19 @@
+*Variables*
+${MarketPlaceWebsite}	https://www-kovan.digixdev.com/app/#/marketplace
+${NewIPAddress}	192.168.1.4	# Change this value based on your terminal's IP Address
+${EmailGeneratorWebsite}	http://www.yopmail.com/en/email-generator.php
+${ValidPassword}	test1234
+${ValidEmail}	ILoveYou3000@gmail.com
+${VerifyMessage}	Please check your email inbox or spam folder
+${VerificationMesage}	Thank You For Registering on Digix Marketplace!
+${LoginFailedMessage}	Invalid username/password
+${UnregisterEmailMessage}	Unconfirmed e-mail
+${MarketPlaceHomeURL}	https://www-kovan.digixdev.com/app/#/marketplace/dgx
+${FirstName} Tester
+${LastName} New
+${DateOfBirth}	1995-09-31
+${Gender1}	Male
+${Contact}	6329151471207
+${Nationality}	Philippines
+${EthereumAddress}	0xAf570b855366136799697a2bcB99002de3c092a6
+@{CountryDropdown}	Afghanistan	Aland Islands Albania Algeria American Samoa Andorra Angola Anguilla Antarctica Antigua and Barbuda Argentina Armenia Aruba Australia Austria Azerbaijan Bahamas Bahrain Bangladesh Barbados Belgium Belize Benin Bermuda Bhutan Bolivia Bonaire, Saint Eustatius and Saba Bosnia and Herzegovina Botswana Bouvet Island Brazil British Indian Ocean Territory British Virgin Islands Brunei Bulgaria Burkina Faso Burundi Cambodia Cameroon Canada Cape Verde Cayman Islands Central African Republic Chad Chile Christmas Island Cocos Islands Colombia Comoros Cook Islands Costa Rica Croatia Curacao Cyprus Czech Republic Denmark Djibouti Dominica Dominican Republic East Timor Ecuador Egypt El Salvador Equatorial Guinea Eritrea Estonia Ethiopia Falkland Islands Faroe Islands Fiji Finland France French Guiana French Polynesia French Southern Territories Gabon Gambia Georgia Germany Ghana Gibraltar Greece Greenland Grenada Guadeloupe Guam Guatemala Guernsey Guinea Guinea-Bissau Guyana Haiti Heard Island and McDonald Islands Honduras Hong Kong Hungary Iceland India Indonesia Ireland Isle of Man Israel Italy Jamaica Jersey Jordan Kazakhstan Kenya Kiribati Kosovo Kuwait Kyrgyzstan Laos Latvia Lebanon Lesotho Libya Liechtenstein Lithuania Luxembourg Macao Macedonia Madagascar Malawi Malaysia Maldives Mali Malta Marshall Islands Martinique Mauritania Mauritius Mayotte Mexico Micronesia Moldova Monaco Mongolia Montenegro Montserrat Morocco Mozambique Namibia Nauru Nepal Netherlands New Caledonia New Zealand Nicaragua Niger Nigeria Niue Norfolk Island Northern Mariana Islands Norway Oman Pakistan Palau Palestinian Territory Panama Papua New Guinea Paraguay Peru Philippines Pitcairn Poland Portugal Qatar Republic of the Congo Reunion Romania Russia Rwanda Saint Barthelemy Saint Helena Saint Kitts and Nevis Saint Lucia Saint Martin Saint Pierre and Miquelon Saint Vincent and the Grenadines Samoa San Marino Sao Tome and Principe Saudi Arabia Senegal Serbia Seychelles Sierra Leone Singapore Sint Maarten Slovakia Slovenia Solomon Islands Somalia South Africa South Georgia and the South Sandwich Islands South Korea Spain Sri Lanka Sudan Suriname Svalbard and Jan Mayen Swaziland Sweden Switzerland Syria Taiwan Tajikistan Tanzania Thailand Togo Tokelau Tonga Trinidad and Tobago Tunisia Turkey Turkmenistan Turks and Caicos Islands Tuvalu U.S. Virgin Islands Uganda Ukraine United Arab Emirates United Kingdom Uruguay Uzbekistan Vanuatu Vatican Venezuela Vietnam Wallis and Futuna Western Sahara Yemen Zambia
